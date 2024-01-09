@@ -1,0 +1,22 @@
+[package]
+name = "yavuz"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = { version = "1.0.79", features = ["backtrace"] }
+axum = { version = "0.7.3", features = ["macros"] }
+hyper = { version = "1.1.0", features = ["full"] }
+lazy_static = "1.4.0"
+serde = { version = "1.0.195", features = ["derive"] }
+serde_json = "1.0.111"
+sqlx = { version = "0.7.3", features = ["runtime-tokio-native-tls", "json", "sqlite"] }
+tokio = { version = "1.35.1", features = ["full"] }
+tower-http = { version = "0.5.0", features = ["trace"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+utoipa = { version = "4.1.0", features = ["axum_extras"] }
+utoipa-rapidoc = { version = "2.0.0", features = ["axum"] }
+utoipa-swagger-ui = { version = "5.0.0", features = ["axum"] }
