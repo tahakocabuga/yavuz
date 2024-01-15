@@ -39,7 +39,7 @@ pub(super) enum UavError {
 
 #[utoipa::path(
     get,
-    path = "/uav",
+    path = "/api/uav",
     responses(
         (status = 200, description = "Current UAV position", body = [UavPosition])
     )
@@ -52,7 +52,7 @@ pub async fn get_uav_position(State(store): State<Arc<UavStore>>) -> impl IntoRe
 
 #[utoipa::path(
     post,
-    path = "/uav/update",
+    path = "/api/uav/update",
     request_body = UavPosition,
     responses(
         (status = 200, description = "UAV position updated successfully", body = UavPosition),

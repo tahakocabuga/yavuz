@@ -13,7 +13,7 @@ use crate::models::mark::{self};
 
 #[utoipa::path(
     get,
-    path = "/marks",
+    path = "/api/marks",
     responses(
         (status = 200, description = "Tüm lokasyonlar alındı", body = [Mark]),
         (status = 500, description = "Lokasyonların alınmasında dahili sunucu hatası", body = [Mark])
@@ -50,7 +50,7 @@ pub async fn all_marks(Extension(pool): Extension<SqlitePool>) -> impl IntoRespo
 
 #[utoipa::path(
     post,
-    path = "/marks/yeni",
+    path = "/api/marks/yeni",
     request_body = NewMark,
     responses(
         (status = 201, description = "Mark başarıyla oluşturuldu", body = [Mark]),
@@ -101,7 +101,7 @@ pub async fn new_mark(
 
 #[utoipa::path(
     get,
-    path = "/marks/{id}",
+    path = "/api/marks/{id}",
     responses(
         (status = 200, description = "Mark returned successfully", body = [Mark]),
         (status = 404, description = "Mark not found", body = [Mark]),
@@ -141,7 +141,7 @@ pub async fn mark(
 
 #[utoipa::path(
     delete,
-    path = "/marks/{id}",
+    path = "/api/marks/{id}",
     responses(
         (status = 200, description = "Mark was deleted"),
         (status = 404, description = "Mark was not found"),
