@@ -23,8 +23,8 @@ pub struct UavPosition {
 impl Default for UavPosition {
     fn default() -> Self {
         UavPosition {
-            latitude: 0.0,
-            longitude: 0.0,
+            latitude: 29.02782,
+            longitude: 41.12577,
         }
     }
 }
