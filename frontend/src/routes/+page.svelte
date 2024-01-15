@@ -162,7 +162,7 @@
 
 			async function addMarkers() {
 				try {
-					const response = await fetch('http://yavuz.tahakocabuga.com/api/marks');
+					const response = await fetch('https://yavuz.tahakocabuga.com/api/marks');
 					const marks = await response.json();
 
 					marks.forEach((mark) => {
@@ -277,7 +277,7 @@
 			async function deleteMark(id) {
 				try {
 					event.stopPropagation();
-					const response = await fetch(`http://yavuz.tahakocabuga.com/api/marks/${id}`, {
+					const response = await fetch(`https://yavuz.tahakocabuga.com/api/marks/${id}`, {
 						method: 'DELETE'
 					});
 
@@ -313,7 +313,7 @@
 			setInterval(reloadMarkers, 20000);
 
 			async function fetchUAVCoordinates() {
-				const response = await fetch('http://yavuz.tahakocabuga.com/api/uav');
+				const response = await fetch('https://yavuz.tahakocabuga.com/api/uav');
 				const { latitude, longitude } = await response.json();
 				return [latitude, longitude];
 			}

@@ -72,7 +72,7 @@ async fn run() -> anyhow::Result<()> {
     .allow_origin(Any);
 let store = Arc::new(controllers::uav::UavStore::default());
     let app = Router::new()
-        .merge(SwaggerUi::new("/swagger-ui").url("/api/api-docs/openapi.json", ApiDoc::openapi()))
+        .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ApiDoc::openapi()))
         .merge(RapiDoc::new("/api/api-docs/openapi.json").path("/rapidoc"))
 
         .route("/", routing::get(test))
